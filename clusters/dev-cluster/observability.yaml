@@ -15,4 +15,4 @@ spec:
     - apiVersion: helm.toolkit.fluxcd.io/v1beta1
       kind: HelmRelease
       name: kube-prometheus-stack
-      namespace: observablity
+      namespace: observability
