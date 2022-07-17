@@ -1,0 +1,29 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: demo
+resources:
+  - adservice-deployment.yaml
+  - adservice-service.yaml
+  - cartservice-deployment.yaml
+  - cartservice-service.yaml
+  - checkoutservice-deployment.yaml
+  - checkoutservice-service.yaml
+  - currencyservice-deployment.yaml
+  - currencyservice-service.yaml
+  - emailservice-deployment.yaml
+  - emailservice-service.yaml
+  - frontend-deployment.yaml
+  - frontend-external-service.yaml
+  - frontend-service.yaml
+  - loadgenerator-deployment.yaml
+  - namespace.yaml
+  - paymentservice-deployment.yaml
+  - paymentservice-service.yaml
+  - productcatalogservice-deployment.yaml
+  - productcatalogservice-service.yaml
+  - recommendationservice-service.yaml
+  - recommendationservice.yaml
+  - redis-cart-deployment.yaml
+  - redis-cart-service.yaml
+  - shippingservice-deployment.yaml
+  - shippingservice-service.yaml
