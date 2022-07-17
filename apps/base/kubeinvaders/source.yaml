@@ -1,8 +1,0 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmRepository
-metadata:
-  name: kubeinvaders
-  namespace: flux-system
-spec:
-  interval: 30m
-  url: https://lucky-sideburn.github.io/helm-charts

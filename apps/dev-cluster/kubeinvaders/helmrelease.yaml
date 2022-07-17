@@ -1,9 +1,0 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: kubeinvaders
-  namespace: demo
-spec:
-  values:
-    ingress:
-      hostName: kubeinvaders.ogenki.io
