@@ -33,22 +33,25 @@ spec:
       binPath: "/home/kubernetes/bin"
     ipv4NativeRoutingCIDR: "10.144.0.0/14"
     resources:
+      requests:
+        cpu: 120m
       limits:
-        cpu: 300m
-        memory: 256Mi
+        memory: 192Mi
     nodeinit:
       enabled: true
       reconfigureKubelet: true
       removeCbrBridge: true
       priorityClassName: system-cluster-critical
       resources:
+        requests:
+          cpu: 50m
         limits:
-          cpu: 100m
-          memory: 100Mi
+          memory: 50Mi
     operator:
       replicas: 3
       resources:
+        requests:
+          cpu: 50m
         limits:
-          cpu: 100m
-          memory: 100Mi
+          memory: 80Mi
       rollOutPods: true # Reload pods when the configmap is updated
