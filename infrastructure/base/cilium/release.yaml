@@ -39,16 +39,16 @@ spec:
         memory: 192Mi
     nodeinit:
       enabled: true
-      reconfigureKubelet: true
+      # reconfigureKubelet: true # It doesn't seem to work
       removeCbrBridge: true
       priorityClassName: system-cluster-critical
       resources:
         requests:
           cpu: 50m
         limits:
-          memory: 50Mi
+          memory: 100Mi
     operator:
-      replicas: 3
+      replicas: 1
       resources:
         requests:
           cpu: 50m

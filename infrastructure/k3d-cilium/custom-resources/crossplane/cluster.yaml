@@ -38,12 +38,12 @@ spec:
     autoscaling:
       autoprovisioned: false
       enabled: true
-      maxNodeCount: 4 # be careful $$$$
+      maxNodeCount: 2 # be careful $$$$
       minNodeCount: 1
     clusterRef:
       name: dev-cluster
     config:
-      machineType: n2-standard-2
+      machineType: n2-standard-4
       diskSizeGb: 120
       diskType: pd-standard
       imageType: cos_containerd
