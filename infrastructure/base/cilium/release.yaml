@@ -1,0 +1,54 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: cilium
+spec:
+  releaseName: cilium
+  chart:
+    spec:
+      chart: cilium
+      sourceRef:
+        kind: HelmRepository
+        name: cilium
+        namespace: kube-system
+      version: "1.11.6"
+  interval: 10m0s
+  install:
+    remediation:
+      retries: 3
+  values:
+    # Performances
+    bpf:
+      preallocateMaps: true
+    tunnel: disabled
+    bandwidthManager: true
+    installNoConntrackIptablesRules: true
+    kubeProxyReplacement: strict
+    # GKE
+    gke:
+      enabled: true
+    ipam:
+      mode: kubernetes
+    cni:
+      binPath: "/home/kubernetes/bin"
+    ipv4NativeRoutingCIDR: "10.144.0.0/14"
+    resources:
+      limits:
+        cpu: 300m
+        memory: 256Mi
+    nodeinit:
+      enabled: true
+      reconfigureKubelet: true
+      removeCbrBridge: true
+      priorityClassName: system-cluster-critical
+      resources:
+        limits:
+          cpu: 100m
+          memory: 100Mi
+    operator:
+      replicas: 3
+      resources:
+        limits:
+          cpu: 100m
+          memory: 100Mi
+      rollOutPods: true # Reload pods when the configmap is updated
