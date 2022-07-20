@@ -6,7 +6,7 @@ metadata:
 spec:
   prune: true
   interval: 4m0s
-  path: ./infrastructure/k3d-cilium
+  path: ./infrastructure/dev-cluster
   sourceRef:
     kind: GitRepository
     name: flux-system
