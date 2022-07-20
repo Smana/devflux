@@ -38,7 +38,7 @@ spec:
     autoscaling:
       autoprovisioned: false
       enabled: true
-      maxNodeCount: 3 # be careful $$$$
+      maxNodeCount: 4 # be careful $$$$
       minNodeCount: 1
     clusterRef:
       name: dev-cluster
