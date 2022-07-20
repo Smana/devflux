@@ -63,10 +63,10 @@ spec:
       shieldedInstanceConfig:
         enableIntegrityMonitoring: true
         enableSecureBoot: true
-      taints:
-        - effect: "NO_EXECUTE"
-          key: "node.cilium.io/agent-not-ready"
-          value: "true"
+      # taints:
+      #   - effect: "NO_EXECUTE"
+      #     key: "node.cilium.io/agent-not-ready"
+      #     value: "true"
     management:
       autoRepair: true
       autoUpgrade: true
