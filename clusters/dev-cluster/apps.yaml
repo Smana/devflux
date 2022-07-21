@@ -4,8 +4,8 @@ metadata:
   name: apps
   namespace: flux-system
 spec:
-  interval: 3m0s
-  timeout: 30m0s
+  interval: 2m0s
+  timeout: 7m0s
   path: ./apps/dev-cluster
   prune: true
   sourceRef:
